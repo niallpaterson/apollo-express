@@ -11,15 +11,13 @@ const db = firebase.firestore();
 
 const collection = 'papers';
 
-// use more efficient method
-
 const find = (id) =>
   db
     .collection(collection)
+    .doc(id)
     .get()
-    .then((snapshot) =>
-      snapshot.docs.map((doc) => doc.data()).filter((datum) => datum.id === id)[0]
-    );
+    .then((doc) => doc.data()
+  );
 
 const findAll = () =>
   db
