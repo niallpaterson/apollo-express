@@ -12,4 +12,4 @@ const app = express();
 
 server.applyMiddleware({app});
 
-module.exports = { app }
+module.exports = { app, server }
